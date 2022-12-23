@@ -1,0 +1,6 @@
+framework module Pods_KConnect_KConnectUITests {
+  umbrella header "Pods-KConnect-KConnectUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

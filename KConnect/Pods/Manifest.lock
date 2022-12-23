@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (5.5.0)
+  - JWTDecode (2.6.3)
+  - SwiftKeychainWrapper (4.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - JWTDecode
+  - SwiftKeychainWrapper
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - JWTDecode
+    - SwiftKeychainWrapper
+
+SPEC CHECKSUMS:
+  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+
+PODFILE CHECKSUM: b28e7996087b6b45153aae55d7b46341e8a5a48c
+
+COCOAPODS: 1.11.3

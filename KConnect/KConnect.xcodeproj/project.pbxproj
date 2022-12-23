@@ -181,6 +181,7 @@
 				CF953D82295604A80036BB97 /* Sources */,
 				CF953D83295604A80036BB97 /* Frameworks */,
 				CF953D84295604A80036BB97 /* Resources */,
+				3B2224273BF55D0DC99C1EDC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,7 +200,6 @@
 				CF953D98295604A90036BB97 /* Sources */,
 				CF953D99295604A90036BB97 /* Frameworks */,
 				CF953D9A295604A90036BB97 /* Resources */,
-				53DE91317966F3F6127D9156 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,6 +219,7 @@
 				CF953DA2295604A90036BB97 /* Sources */,
 				CF953DA3295604A90036BB97 /* Frameworks */,
 				CF953DA4295604A90036BB97 /* Resources */,
+				3BD641B3802EAD638A9BB92F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +303,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3B2224273BF55D0DC99C1EDC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KConnect/Pods-KConnect-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KConnect/Pods-KConnect-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KConnect/Pods-KConnect-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3BD641B3802EAD638A9BB92F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KConnect-KConnectUITests/Pods-KConnect-KConnectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KConnect-KConnectUITests/Pods-KConnect-KConnectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KConnect-KConnectUITests/Pods-KConnect-KConnectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		49DFF4D969126F6C0991F400 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -322,23 +357,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		53DE91317966F3F6127D9156 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KConnectTests/Pods-KConnectTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KConnectTests/Pods-KConnectTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KConnectTests/Pods-KConnectTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C273261C0C59EC36FC1BB480 /* [CP] Check Pods Manifest.lock */ = {
