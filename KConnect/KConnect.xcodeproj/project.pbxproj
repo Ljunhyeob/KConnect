@@ -20,6 +20,11 @@
 		CF953DAB295604A90036BB97 /* KConnectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF953DAA295604A90036BB97 /* KConnectUITests.swift */; };
 		CF953DAD295604A90036BB97 /* KConnectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF953DAC295604A90036BB97 /* KConnectUITestsLaunchTests.swift */; };
 		CF953DBE29560F1C0036BB97 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CF953DBD29560F1C0036BB97 /* logo.png */; };
+		CFA15D5B29568DED0065D893 /* PwdChangeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA15D5A29568DED0065D893 /* PwdChangeController.swift */; };
+		CFA15D5E295697DC0065D893 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA15D5D295697DC0065D893 /* LoginModel.swift */; };
+		CFA15D60295698CC0065D893 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA15D5F295698CC0065D893 /* UserModel.swift */; };
+		CFA15D62295699330065D893 /* LoadingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFA15D61295699330065D893 /* LoadingService.swift */; };
+		CFA15D6729569FAE0065D893 /* EmployeeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFA15D6629569FAE0065D893 /* EmployeeStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +66,11 @@
 		CF953DAA295604A90036BB97 /* KConnectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KConnectUITests.swift; sourceTree = "<group>"; };
 		CF953DAC295604A90036BB97 /* KConnectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KConnectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CF953DBD29560F1C0036BB97 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		CFA15D5A29568DED0065D893 /* PwdChangeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwdChangeController.swift; sourceTree = "<group>"; };
+		CFA15D5D295697DC0065D893 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		CFA15D5F295698CC0065D893 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CFA15D61295699330065D893 /* LoadingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingService.swift; sourceTree = "<group>"; };
+		CFA15D6629569FAE0065D893 /* EmployeeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeStoryboard.storyboard; sourceTree = "<group>"; };
 		F1CC5055D924AEE3CD520F9F /* Pods_KConnect.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KConnect.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FED98AAE3D3B6044243D338D /* Pods-KConnect.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KConnect.release.xcconfig"; path = "Target Support Files/Pods-KConnect/Pods-KConnect.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,9 +151,12 @@
 		CF953D88295604A80036BB97 /* KConnect */ = {
 			isa = PBXGroup;
 			children = (
+				CFA15D5C295697C60065D893 /* Common */,
+				CFA15D6529569F7F0065D893 /* Employee */,
 				CF953D89295604A80036BB97 /* AppDelegate.swift */,
 				CF953D8B295604A80036BB97 /* SceneDelegate.swift */,
 				CF953D8D295604A80036BB97 /* ViewController.swift */,
+				CFA15D5A29568DED0065D893 /* PwdChangeController.swift */,
 				CF953D8F295604A80036BB97 /* Main.storyboard */,
 				CF953D92295604A90036BB97 /* Assets.xcassets */,
 				CF953DBD29560F1C0036BB97 /* logo.png */,
@@ -168,6 +181,24 @@
 				CF953DAC295604A90036BB97 /* KConnectUITestsLaunchTests.swift */,
 			);
 			path = KConnectUITests;
+			sourceTree = "<group>";
+		};
+		CFA15D5C295697C60065D893 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CFA15D5D295697DC0065D893 /* LoginModel.swift */,
+				CFA15D5F295698CC0065D893 /* UserModel.swift */,
+				CFA15D61295699330065D893 /* LoadingService.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CFA15D6529569F7F0065D893 /* Employee */ = {
+			isa = PBXGroup;
+			children = (
+				CFA15D6629569FAE0065D893 /* EmployeeStoryboard.storyboard */,
+			);
+			name = Employee;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +313,7 @@
 				CF953DBE29560F1C0036BB97 /* logo.png in Resources */,
 				CF953D96295604A90036BB97 /* LaunchScreen.storyboard in Resources */,
 				CF953D93295604A90036BB97 /* Assets.xcassets in Resources */,
+				CFA15D6729569FAE0065D893 /* EmployeeStoryboard.storyboard in Resources */,
 				CF953D91295604A80036BB97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,8 +442,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFA15D5E295697DC0065D893 /* LoginModel.swift in Sources */,
 				CF953D8E295604A80036BB97 /* ViewController.swift in Sources */,
+				CFA15D5B29568DED0065D893 /* PwdChangeController.swift in Sources */,
 				CF953D8A295604A80036BB97 /* AppDelegate.swift in Sources */,
+				CFA15D60295698CC0065D893 /* UserModel.swift in Sources */,
+				CFA15D62295699330065D893 /* LoadingService.swift in Sources */,
 				CF953D8C295604A80036BB97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
