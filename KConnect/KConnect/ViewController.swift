@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginPwd: UITextField!
     @IBOutlet weak var autoLoginCheck: UIButton!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var passwordLookBtn: UIButton!
     
     var autoLoginFlag = false
     
@@ -26,11 +27,31 @@ class ViewController: UIViewController {
         
         loginBtn.layer.cornerRadius = 10
         
+        //오토로그인으로 userDefault 에 저장된 값이 있나 확인 후, 있으면 바로 로그인 진행.
+        
+        if UserDefaults.standard.string(forKey: "loginId") != nil {
+            loginId.text = UserDefaults.standard.string(forKey: "loginId")
+            loginPwd.text = UserDefaults.standard.string(forKey: "loginPwd")
+            login()
+        }
+        
     }
 
     @IBAction func loginBtnAction(_ sender: Any) {
         LoadingService.showLoading()
+        if autoLoginFlag {// userDefault에 아이디 패스워드 저장.
+            UserDefaults.standard.set(loginId.text, forKey: "loginId")
+            UserDefaults.standard.set(loginPwd.text, forKey: "loginPwd")
+        }
         login()
+    }
+    
+    @IBAction func passwordLookBtnAction(_ sender: Any) {
+        if loginPwd.isSecureTextEntry == true{
+            loginPwd.isSecureTextEntry = false
+        }else {
+            loginPwd.isSecureTextEntry = true
+        }
     }
     
     @IBAction func autoLoginBtnAction(_ sender: Any) {
@@ -46,6 +67,7 @@ class ViewController: UIViewController {
     
     
     func login() {
+        print("login() 실행")
         if loginId.text == nil || loginPwd.text == nil {
            makeToast(message: "아이디와 비밀번호를 입력하세요.")
         } else {
@@ -101,7 +123,7 @@ class ViewController: UIViewController {
                             
                             
                             
-                            if INF.REQUIRE_PASSWORD_CHANGE == false {
+                            if INF.REQUIRE_PASSWORD_CHANGE == true {
                                 
                                 let viewControllerName = self.storyboard?.instantiateViewController(withIdentifier: "PwdChangeController")
                                 viewControllerName?.modalTransitionStyle = .flipHorizontal
@@ -176,5 +198,17 @@ class ViewController: UIViewController {
           }
     
     
+}
+
+class APIManager: NSObject{
+    internal static func getAPIHeader() -> HTTPHeaders {
+        var header = HTTPHeaders()
+        let token: String? = KeychainWrapper.standard.string(forKey: "token")
+        let authorization: String! = token
+        
+        header.add(name: "Authorization", value: "Bearer "+authorization!)
+
+        return header
+    }
 }
 

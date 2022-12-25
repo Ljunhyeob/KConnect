@@ -28,7 +28,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oqt-Yd-cJZ">
                                 <rect key="frame" x="87" y="381" width="240" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8E-mG-SWn">
                                 <rect key="frame" x="130" y="506" width="154" height="31"/>
@@ -50,10 +50,23 @@
                                     <action selector="autoLoginBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jmR-a3-HGZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kaq-Zg-TBE">
+                                <rect key="frame" x="292" y="386" width="45" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Ekg-d6-Qmg"/>
+                                </constraints>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye.circle.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="passwordLookBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hiW-qF-c15"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Kaq-Zg-TBE" firstAttribute="top" secondItem="lcC-pk-iks" secondAttribute="bottom" constant="45" id="0hF-kS-tKn"/>
                             <constraint firstItem="G8E-mG-SWn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="1TG-q1-xRi"/>
                             <constraint firstItem="1cz-SU-LjY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="2yH-dL-Tns"/>
                             <constraint firstItem="lcC-pk-iks" firstAttribute="top" secondItem="1cz-SU-LjY" secondAttribute="bottom" constant="71" id="4K0-qQ-Wb6"/>
@@ -61,10 +74,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oqt-Yd-cJZ" secondAttribute="trailing" constant="87" id="7BI-Lq-y87"/>
                             <constraint firstItem="oqt-Yd-cJZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="Ap2-du-1yW"/>
                             <constraint firstItem="oqt-Yd-cJZ" firstAttribute="top" secondItem="lcC-pk-iks" secondAttribute="bottom" constant="40" id="FRk-2W-0Vy"/>
+                            <constraint firstItem="Yk2-Rw-ZUM" firstAttribute="top" secondItem="Kaq-Zg-TBE" secondAttribute="bottom" constant="37" id="Igv-Il-Aco"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Yk2-Rw-ZUM" secondAttribute="trailing" constant="67" id="Isf-Og-euY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G8E-mG-SWn" secondAttribute="trailing" constant="130" id="ZFO-qe-nRv"/>
                             <constraint firstItem="G8E-mG-SWn" firstAttribute="top" secondItem="Yk2-Rw-ZUM" secondAttribute="bottom" constant="29.5" id="dt1-8M-d9q"/>
+                            <constraint firstItem="Kaq-Zg-TBE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gGO-lt-o92"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lcC-pk-iks" secondAttribute="trailing" constant="87" id="qcn-E9-vEE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kaq-Zg-TBE" secondAttribute="trailing" constant="77" id="raX-Cl-mKV"/>
                             <constraint firstItem="Yk2-Rw-ZUM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="174" id="rce-JH-qqB"/>
                             <constraint firstItem="1cz-SU-LjY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="78" id="urD-Cv-x3i"/>
                             <constraint firstItem="Yk2-Rw-ZUM" firstAttribute="top" secondItem="oqt-Yd-cJZ" secondAttribute="bottom" constant="33" id="wap-Dh-DDW"/>
@@ -77,6 +93,7 @@
                         <outlet property="loginBtn" destination="G8E-mG-SWn" id="xda-O0-fsK"/>
                         <outlet property="loginId" destination="lcC-pk-iks" id="e07-Vh-tqH"/>
                         <outlet property="loginPwd" destination="oqt-Yd-cJZ" id="S3I-kg-3P0"/>
+                        <outlet property="passwordLookBtn" destination="Kaq-Zg-TBE" id="RK4-ZW-N6o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -190,6 +207,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="eye.circle.fill" catalog="system" width="128" height="121"/>
         <image name="logo.png" width="305" height="70"/>
         <image name="squareshape" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
