@@ -27,8 +27,9 @@ class ViewController: UIViewController {
         
         loginBtn.layer.cornerRadius = 10
         
-        //오토로그인으로 userDefault 에 저장된 값이 있나 확인 후, 있으면 바로 로그인 진행.
+        navigationItem.hidesBackButton = true
         
+        //오토로그인으로 userDefault 에 저장된 값이 있나 확인 후, 있으면 바로 로그인 진행.
         if UserDefaults.standard.string(forKey: "loginId") != nil {
             loginId.text = UserDefaults.standard.string(forKey: "loginId")
             loginPwd.text = UserDefaults.standard.string(forKey: "loginPwd")
@@ -39,10 +40,6 @@ class ViewController: UIViewController {
 
     @IBAction func loginBtnAction(_ sender: Any) {
         LoadingService.showLoading()
-        if autoLoginFlag {// userDefault에 아이디 패스워드 저장.
-            UserDefaults.standard.set(loginId.text, forKey: "loginId")
-            UserDefaults.standard.set(loginPwd.text, forKey: "loginPwd")
-        }
         login()
     }
     
@@ -91,6 +88,10 @@ class ViewController: UIViewController {
                 switch response.result{
                 case .success(let resData):
                     print("(ViewController-71Line) resData: \(resData)")
+                    if self.autoLoginFlag {// userDefault에 아이디 패스워드 저장.
+                        UserDefaults.standard.set(self.loginId.text, forKey: "loginId")
+                        UserDefaults.standard.set(self.loginPwd.text, forKey: "loginPwd")
+                    }
                     let decoder = JSONDecoder()
                     let data = resData.data(using: .utf8)
                     

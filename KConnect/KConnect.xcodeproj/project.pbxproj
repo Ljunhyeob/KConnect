@@ -10,6 +10,7 @@
 		250EB31A41694047DCD893FB /* Pods_KConnect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1CC5055D924AEE3CD520F9F /* Pods_KConnect.framework */; };
 		5E6D792619D7921E1442680B /* Pods_KConnect_KConnectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB593727886D1F54F17B1A61 /* Pods_KConnect_KConnectUITests.framework */; };
 		B6944245ED019A561C95B965 /* Pods_KConnectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD165764D44D2F79824A31D9 /* Pods_KConnectTests.framework */; };
+		CF271BB629592B6C006ED19C /* EmployeeMainPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF271BB529592B6C006ED19C /* EmployeeMainPage.swift */; };
 		CF953D8A295604A80036BB97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF953D89295604A80036BB97 /* AppDelegate.swift */; };
 		CF953D8C295604A80036BB97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF953D8B295604A80036BB97 /* SceneDelegate.swift */; };
 		CF953D8E295604A80036BB97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF953D8D295604A80036BB97 /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 		A3910FA786714EDBA0A21130 /* Pods-KConnectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KConnectTests.debug.xcconfig"; path = "Target Support Files/Pods-KConnectTests/Pods-KConnectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AB593727886D1F54F17B1A61 /* Pods_KConnect_KConnectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KConnect_KConnectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD165764D44D2F79824A31D9 /* Pods_KConnectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KConnectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF271BB529592B6C006ED19C /* EmployeeMainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeMainPage.swift; sourceTree = "<group>"; };
 		CF953D86295604A80036BB97 /* KConnect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KConnect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF953D89295604A80036BB97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF953D8B295604A80036BB97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				CFA15D6629569FAE0065D893 /* EmployeeStoryboard.storyboard */,
+				CF271BB529592B6C006ED19C /* EmployeeMainPage.swift */,
 			);
 			name = Employee;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				CFA15D5E295697DC0065D893 /* LoginModel.swift in Sources */,
 				CF953D8E295604A80036BB97 /* ViewController.swift in Sources */,
 				CFA15D5B29568DED0065D893 /* PwdChangeController.swift in Sources */,
+				CF271BB629592B6C006ED19C /* EmployeeMainPage.swift in Sources */,
 				CF953D8A295604A80036BB97 /* AppDelegate.swift in Sources */,
 				CFA15D60295698CC0065D893 /* UserModel.swift in Sources */,
 				CFA15D62295699330065D893 /* LoadingService.swift in Sources */,
