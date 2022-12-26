@@ -23,6 +23,10 @@ class EmployeeMainPage: UIViewController {
     @IBOutlet weak var vacationHistoryBtn: UIButton!
     @IBOutlet weak var vacationState: UILabel!
     
+    @IBOutlet weak var vacationStartLabel: UILabel!
+    @IBOutlet weak var vacationStateLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -42,6 +46,8 @@ class EmployeeMainPage: UIViewController {
         vacationHistoryBtn.layer.cornerRadius = 10
         
         vacationState.sizeToFit()
+        vacationStartLabel.sizeToFit()
+        vacationStateLabel.sizeToFit()
        
     }
     
