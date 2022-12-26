@@ -158,7 +158,7 @@
                                                     <constraint firstItem="1Tw-4O-Ul5" firstAttribute="leading" secondItem="u6m-Pi-QIy" secondAttribute="leading" constant="2" id="gRJ-gz-qCW"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-0s-DMi">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdQ-0s-DMi" userLabel="VacationStateView">
                                                 <rect key="frame" x="0.0" y="200" width="414" height="400"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연차 승인 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfA-0M-jlS">
@@ -172,6 +172,9 @@
                                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="repeat.circle.fill" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="retryBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Z3n-5D-dEM"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-GG-WOK">
                                                         <rect key="frame" x="306.5" y="22" width="87.5" height="34.5"/>
@@ -179,15 +182,18 @@
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="휴가 내역"/>
+                                                        <connections>
+                                                            <action selector="vacationHistoryBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KYX-Wc-jp2"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴가 시작 일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hl-ZQ-Qey">
-                                                        <rect key="frame" x="18" y="109" width="185" height="21"/>
+                                                        <rect key="frame" x="18" y="109" width="185" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tc9-hA-bty">
-                                                        <rect key="frame" x="212" y="109" width="184" height="21"/>
+                                                        <rect key="frame" x="211.5" y="109" width="184.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -216,38 +222,49 @@
                                                         <rect key="frame" x="18" y="145" width="378" height="246"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tzN-az-CVT">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="tzN-az-CVT" customClass="vacationStateCell" customModule="KConnect" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="50" width="378" height="43.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tzN-az-CVT" id="LLD-Vw-COf">
                                                                     <rect key="frame" x="0.0" y="0.0" width="378" height="43.5"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0000-00-00 (일)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quz-A1-w49">
-                                                                            <rect key="frame" x="20" y="11" width="147" height="21"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000-00-00 (일)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quz-A1-w49">
+                                                                            <rect key="frame" x="22" y="13" width="129" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="대기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pze-S1-TQg">
-                                                                            <rect key="frame" x="261" y="12" width="49" height="21"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pze-S1-TQg">
+                                                                            <rect key="frame" x="271" y="12" width="29.5" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fF9-ev-tej">
-                                                                            <rect key="frame" x="334" y="12" width="24" height="21"/>
-                                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eNQ-RF-AHG">
+                                                                            <rect key="frame" x="333" y="13" width="19.5" height="17.5"/>
                                                                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <state key="normal" title="Button"/>
-                                                                            <buttonConfiguration key="configuration" style="plain" image="chevron.right.square" catalog="system"/>
-                                                                        </button>
+                                                                        </imageView>
                                                                     </subviews>
+                                                                    <constraints>
+                                                                        <constraint firstItem="eNQ-RF-AHG" firstAttribute="leading" secondItem="pze-S1-TQg" secondAttribute="trailing" constant="32.5" id="NEr-2g-PxP"/>
+                                                                        <constraint firstItem="quz-A1-w49" firstAttribute="top" secondItem="LLD-Vw-COf" secondAttribute="topMargin" constant="2" id="Qpb-7Z-1XU"/>
+                                                                        <constraint firstItem="eNQ-RF-AHG" firstAttribute="top" secondItem="LLD-Vw-COf" secondAttribute="top" constant="12" id="TK4-5T-1sB"/>
+                                                                        <constraint firstItem="pze-S1-TQg" firstAttribute="top" secondItem="LLD-Vw-COf" secondAttribute="top" constant="12" id="ePc-J2-cGu"/>
+                                                                        <constraint firstItem="pze-S1-TQg" firstAttribute="leading" secondItem="quz-A1-w49" secondAttribute="trailing" constant="120" id="ioa-lc-Sk0"/>
+                                                                        <constraint firstItem="quz-A1-w49" firstAttribute="leading" secondItem="LLD-Vw-COf" secondAttribute="leadingMargin" constant="2" id="vCD-Kd-4ew"/>
+                                                                    </constraints>
                                                                 </tableViewCellContentView>
+                                                                <connections>
+                                                                    <outlet property="vacationStartDate" destination="quz-A1-w49" id="4SW-f2-5yB"/>
+                                                                    <outlet property="vacationState" destination="pze-S1-TQg" id="3WO-he-Fei"/>
+                                                                </connections>
                                                             </tableViewCell>
                                                         </prototypes>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="Y6W-OH-hqX" id="dRm-cF-XHK"/>
+                                                            <outlet property="delegate" destination="Y6W-OH-hqX" id="oeV-qf-I0n"/>
+                                                        </connections>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTq-p1-96i">
                                                         <rect key="frame" x="209" y="22" width="87.5" height="34.5"/>
@@ -255,6 +272,9 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="휴가 신청"/>
+                                                        <connections>
+                                                            <action selector="vacationApplicationBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QK4-xg-j1Q"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -322,6 +342,7 @@
                         <outlet property="infoTotalDate" destination="ASJ-Jk-eOr" id="gmx-ce-izh"/>
                         <outlet property="infoUseDate" destination="bq5-p7-w1h" id="sa4-AS-phg"/>
                         <outlet property="infoView" destination="BeQ-um-suz" id="0Kt-4T-pXu"/>
+                        <outlet property="myVacationHistoryTable" destination="Fyf-n2-YQX" id="b7q-eh-8r7"/>
                         <outlet property="retryBtn" destination="hph-yN-oqj" id="qXV-u6-10H"/>
                         <outlet property="vacationApplicationBtn" destination="zTq-p1-96i" id="TMb-O4-ecN"/>
                         <outlet property="vacationHistoryBtn" destination="AJA-GG-WOK" id="vFk-TI-ytx"/>
