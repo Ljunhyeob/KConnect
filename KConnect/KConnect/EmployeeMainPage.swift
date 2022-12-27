@@ -8,8 +8,9 @@
 import UIKit
 import Alamofire
 import SwiftKeychainWrapper
+import FSCalendar
 
-class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDelegate, FSCalendarDelegate, FSCalendarDataSource {
  
     
     
@@ -33,6 +34,9 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var myVacationHistoryTable: UITableView!
     
     
+    @IBOutlet weak var calendarView: FSCalendar!
+    
+    
     //연차 승인 현황 cell 배열
     var applicationDateCell: [String] = [] //신청날짜
     var applicationStateCell: [String] = [] //상태
@@ -41,6 +45,8 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
     var applicationEndDateCell: [String] = [] //종료날짜
     var applicationCommentCell: [String] = [] //사유
     var applicationIdCell: [String] = [] // 휴가 id
+    
+    var dateArray: [Date] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +77,24 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
         
         
         //--------초기 실행 코드--------//
+        calendarView.delegate = self
+        calendarView.dataSource = self
+        calendarView.locale = Locale(identifier: "ko_KR")
+        calendarView.appearance.headerTitleFont = UIFont(name: "NotoSansKR-Medium", size: 16)
+        calendarView.appearance.weekdayFont = UIFont(name: "NotoSansKR-Regular", size: 14)
+        calendarView.appearance.titleFont = UIFont(name: "NotoSansKR-Regular", size: 14)
+        calendarView.appearance.headerDateFormat = "YYYY년 MM월"
+        calendarView.appearance.headerTitleColor = UIColor.link
+        calendarView.appearance.headerTitleAlignment = .center
+        calendarView.headerHeight = 45
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
+        calendarView.appearance.borderRadius = 5
+        calendarView.appearance.titleDefaultColor = .black  // 평일
+        calendarView.appearance.titleWeekendColor = .red    // 주말
+        calendarView.layer.cornerRadius = 10
+        calendarView.appearance.eventSelectionColor = UIColor.lightGray
+//        calendarView.calendarHeaderView.backgroundColor = UIColor.lightGray
+//        calendarView.calendarWeekdayView.backgroundColor = UIColor.gray
         
         getProfile() //내 정보 가져오기
         getVacationHistory() //연차 승인 현황 가져오기
@@ -129,6 +153,15 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
         //휴가 내역 버튼
     }
     
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        if self.dateArray.contains(date){
+
+            return 1
+        }
+
+        return 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return applicationStartDateCell.count
 //        if tableView == myVacationHistoryTable{
@@ -142,7 +175,16 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
      
         if tableView == myVacationHistoryTable, let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? vacationStateCell{
 
-            cell.vacationStartDate.text = applicationStartDateCell[indexPath.row]
+            var date = applicationStartDateCell[indexPath.row]
+            print("LJH date: ", date)
+            setEvent(var: date)
+            
+            date.insert("-", at: date.index(date.startIndex, offsetBy: 4))
+            date.insert("-", at: date.index(date.startIndex, offsetBy: 7))
+            
+            
+            cell.vacationStartDate.text = date
+            
                    if applicationStateCell[indexPath.row] == "반려"{
                        cell.vacationState.text = applicationStateCell[indexPath.row]
                        cell.vacationState.textColor = .red
@@ -186,6 +228,8 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
                      infoPhoneNum.text! = profileModel.data.phoneNumber
                      infoUseDate.text! = String(profileModel.data.usedDays)
                      infoTotalDate.text! = String(profileModel.data.totalDays)
+                     
+                     
                      
                      UserDefaults.standard.set(infoTotalDate.text!, forKey: "totalVacation") //총 연차 저장
                      UserDefaults.standard.set(infoUseDate.text!, forKey: "usedVacation") //사용 연차 저장
@@ -257,9 +301,19 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
         return year
     }
     
+    func setEvent(var days : String){
+        let dfMatter = DateFormatter()
+        dfMatter.locale = Locale(identifier: "ko_KR")
+        dfMatter.dateFormat = "yyyyMMdd"
+        let startDate = dfMatter.date(from: days)
+        dateArray.append(startDate!)
+    }
+    
     //-----------함수------------//
     
 }
+
+
 
 class vacationStateCell : UITableViewCell{
     

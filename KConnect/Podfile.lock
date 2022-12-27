@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.5.0)
+  - FSCalendar (2.8.4)
   - JWTDecode (2.6.3)
   - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
   - Alamofire
+  - FSCalendar
   - JWTDecode
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FSCalendar
     - JWTDecode
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: b28e7996087b6b45153aae55d7b46341e8a5a48c
+PODFILE CHECKSUM: 9529328c0361d6ed325fd3fddd8fe7ef78c57a57
 
 COCOAPODS: 1.11.3
