@@ -307,6 +307,7 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
         dfMatter.dateFormat = "yyyyMMdd"
         let startDate = dfMatter.date(from: days)
         dateArray.append(startDate!)
+        calendarView.reloadData()
     }
     
     //-----------함수------------//
