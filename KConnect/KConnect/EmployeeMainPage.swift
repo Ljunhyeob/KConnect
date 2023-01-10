@@ -54,7 +54,7 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
         
         //--------UI관련 코드---------//
         self.navigationItem.hidesBackButton = true // 네비게이션바 백 버튼 숨김.
-        
+        calendarView.scrollEnabled = false
         infoView.layer.borderColor = UIColor.black.cgColor
         infoView.layer.borderWidth = 1
         infoView.layer.cornerRadius = 10

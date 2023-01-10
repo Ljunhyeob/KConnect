@@ -148,8 +148,8 @@
                                                         <rect key="frame" x="2" y="50" width="410" height="240"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴가 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgN-UA-FA3">
-                                                        <rect key="frame" x="20" y="20" width="66.5" height="25"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이번 달 휴가 현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgN-UA-FA3">
+                                                        <rect key="frame" x="20" y="20" width="121.5" height="25"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJA-GG-WOK">
-                                                        <rect key="frame" x="306.5" y="22" width="87.5" height="34.5"/>
+                                                        <rect key="frame" x="311.5" y="22" width="87.5" height="34.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
@@ -283,7 +283,7 @@
                                                         </connections>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTq-p1-96i">
-                                                        <rect key="frame" x="209" y="22" width="87.5" height="34.5"/>
+                                                        <rect key="frame" x="214" y="22" width="87.5" height="34.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
@@ -297,7 +297,7 @@
                                                 <constraints>
                                                     <constraint firstItem="vUS-qc-jUb" firstAttribute="leading" secondItem="pcB-vn-MIO" secondAttribute="trailing" constant="8.5" id="3vq-jl-wdz"/>
                                                     <constraint firstItem="pcB-vn-MIO" firstAttribute="centerX" secondItem="4hl-ZQ-Qey" secondAttribute="centerX" id="9R4-IS-hqZ"/>
-                                                    <constraint firstAttribute="trailing" secondItem="AJA-GG-WOK" secondAttribute="trailing" constant="20" id="BLJ-86-7Co"/>
+                                                    <constraint firstAttribute="trailing" secondItem="AJA-GG-WOK" secondAttribute="trailing" constant="15" id="BLJ-86-7Co"/>
                                                     <constraint firstItem="OfA-0M-jlS" firstAttribute="leading" secondItem="OdQ-0s-DMi" secondAttribute="leading" constant="27" id="EiJ-ad-Mxr"/>
                                                     <constraint firstItem="pcB-vn-MIO" firstAttribute="top" secondItem="4hl-ZQ-Qey" secondAttribute="bottom" constant="1.5" id="GUy-3L-Kh7"/>
                                                     <constraint firstItem="OfA-0M-jlS" firstAttribute="top" secondItem="OdQ-0s-DMi" secondAttribute="top" constant="29" id="Ibj-fJ-C9f"/>
