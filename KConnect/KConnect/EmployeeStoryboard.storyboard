@@ -193,6 +193,7 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="휴가 내역"/>
                                                         <connections>
                                                             <action selector="vacationHistoryBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KYX-Wc-jp2"/>
+                                                            <segue destination="XTl-9A-F0D" kind="show" id="ndb-As-0Dx"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="휴가 일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hl-ZQ-Qey">
@@ -290,6 +291,7 @@
                                                         <buttonConfiguration key="configuration" style="plain" title="휴가 신청"/>
                                                         <connections>
                                                             <action selector="vacationApplicationBtnAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="QK4-xg-j1Q"/>
+                                                            <segue destination="PJb-SW-PbN" kind="show" id="3g5-aO-f3g"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -371,6 +373,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-17.39130434782609" y="97.767857142857139"/>
+        </scene>
+        <!--휴가신청-->
+        <scene sceneID="VQk-xh-gMc">
+            <objects>
+                <viewController id="PJb-SW-PbN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rJY-78-uZO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="e2K-o4-Rxn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="휴가신청" id="xza-l9-mCq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOv-Pu-nPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="694" y="98"/>
+        </scene>
+        <!--휴가내역-->
+        <scene sceneID="usy-7L-WSx">
+            <objects>
+                <viewController id="XTl-9A-F0D" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O6N-E9-uEX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jsb-P0-H2D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="휴가내역" id="3UE-IV-ZsZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKD-28-qBp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1387" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q3h-b9-h11">
