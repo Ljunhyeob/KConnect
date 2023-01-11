@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.5.0)
+  - Alamofire (5.6.4)
   - FSCalendar (2.8.4)
   - JWTDecode (2.6.3)
   - SwiftKeychainWrapper (4.0.1)
@@ -18,7 +18,7 @@ SPEC REPOS:
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
-  Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   JWTDecode: 33e5e26e5ddbd21b2065820894c08fef0cad9509
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c

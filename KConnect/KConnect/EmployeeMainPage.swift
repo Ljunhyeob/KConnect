@@ -10,7 +10,7 @@ import Alamofire
 import SwiftKeychainWrapper
 import FSCalendar
 
-class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDelegate, FSCalendarDelegate, FSCalendarDataSource {
+class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDelegate, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
  
     
     
@@ -92,7 +92,11 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
         calendarView.appearance.titleDefaultColor = .black  // 평일
         calendarView.appearance.titleWeekendColor = .red    // 주말
         calendarView.layer.cornerRadius = 10
-        calendarView.appearance.eventSelectionColor = UIColor.lightGray
+        calendarView.appearance.titlePlaceholderColor = UIColor.white.withAlphaComponent(0.2)
+        calendarView.placeholderType = .none
+        calendarView.appearance.subtitleOffset = CGPoint(x: 0, y: 4)
+        //calendarView.appearance.eventSelectionColor = UIColor.white
+        //calendarView.appearance.eventSelectionColor = UIColor.lightGray
 //        calendarView.calendarHeaderView.backgroundColor = UIColor.lightGray
 //        calendarView.calendarWeekdayView.backgroundColor = UIColor.gray
         
@@ -153,12 +157,23 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
         //휴가 내역 버튼
     }
     
+    //날짜 선택했을때 할 일
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+            
+    }
+    
+    // 선택된 날짜의 채워진 색상 지정
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, fillSelectionColorFor date: Date) -> UIColor? {
+        return UIColor.lightGray
+    }
+    
+    
+    
+    
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         if self.dateArray.contains(date){
-
             return 1
         }
-
         return 0
     }
     
@@ -170,6 +185,8 @@ class EmployeeMainPage: UIViewController, UITableViewDataSource, UITableViewDele
 //            //팀장 결재 리스트
 //            //return approvalDateCell.count
     }
+    
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
      
