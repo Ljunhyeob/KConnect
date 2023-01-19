@@ -377,7 +377,7 @@
         <!--휴가신청-->
         <scene sceneID="VQk-xh-gMc">
             <objects>
-                <viewController id="PJb-SW-PbN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmployeeVacationApplication" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PJb-SW-PbN" customClass="EmployeeVacationApplication" customModule="KConnect" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJY-78-uZO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -471,6 +471,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="휴가신청" id="xza-l9-mCq"/>
+                    <connections>
+                        <outlet property="infoView" destination="fut-kI-d19" id="xK6-9j-Z2q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOv-Pu-nPo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

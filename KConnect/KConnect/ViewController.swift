@@ -47,7 +47,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func loginBtnAction(_ sender: Any) {
-        LoadingService.showLoading()
         login()
     }
     
@@ -72,6 +71,7 @@ class ViewController: UIViewController {
     
     
     func login() {
+        LoadingService.showLoading()
         print("login() 실행")
         if loginId.text == nil || loginPwd.text == nil {
            makeToast(message: "아이디와 비밀번호를 입력하세요.")
